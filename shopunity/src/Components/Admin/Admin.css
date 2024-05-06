@@ -1,0 +1,17 @@
+.Admin_login {
+  padding-top: 5%;
+}
+.Admin_login_main {
+  border: 1px solid rgb(168, 173, 179);
+  border-radius: 8px;
+  padding: 2%;
+  margin: 5%;
+  background-image: url("https://img.freepik.com/free-photo/brunette-businesswoman-posing_23-2148142724.jpg?w=740&t=st=1707465492~exp=1707466092~hmac=a637c1729cc4411abc1625d76f833943168285dad57ac97f80981326bf357c34");
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+.Admin_login_form {
+  padding: 6%;
+  margin: 0 8%;
+}

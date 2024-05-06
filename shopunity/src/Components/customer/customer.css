@@ -1,0 +1,37 @@
+.customer_register_main {
+  border: 1px solid rgb(168, 173, 179);
+  border-radius: 8px;
+  padding: 10% 2%;
+  margin: 5%;
+  background-image: url("https://img.freepik.com/free-photo/fun-during-shopping_1098-13306.jpg?w=740&t=st=1707465671~exp=1707466271~hmac=c6c5b9a88a1cc65d252c0f7edd057d9c6a2e6cf178d98071ed6df12b39d9faf1");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.customer_register_form {
+  padding: 2%;
+  margin: 0 8%;
+}
+
+.customer_register {
+  padding-top: 5%;
+}
+.customer_login {
+  padding-top: 5%;
+}
+.customer_login_main {
+  border: 1px solid rgb(168, 173, 179);
+  border-radius: 8px;
+  padding:12% 2%;
+  margin: 5%;
+  background-image: url("https://img.freepik.com/free-photo/young-woman-enjoy-shopping-with-credit-cards_1150-18772.jpg?w=740&t=st=1707465305~exp=1707465905~hmac=93e10f9b2511fae661c80a6b6f0e17786a7c24289123524c305c869c5dd0486e");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.customer_login_form {
+  padding: 6%;
+  margin: 0 8%;
+}
+
+.customer_register_img {
+  padding-top: 30%;
+}

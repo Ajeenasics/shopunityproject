@@ -1,0 +1,40 @@
+.shop_register_main{
+    border:1px solid rgb(168, 173, 179) ;
+    border-radius: 8px;
+    padding: 2%;
+    margin: 5%;
+    background-image:url("https://img.freepik.com/free-photo/beautiful-attractive-asian-cafe-shop-owner-smile-with-happiness-joyful-with-coffee-cup-apron-cafe-background_609648-2418.jpg?w=740&t=st=1707464808~exp=1707465408~hmac=9c9c9b0dac66857b668f2e1b19cded757d3d20166c08649c3465934cd6a2e47c");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  }
+  .shop_register_form{
+      padding: 2%;
+      margin: 0 8%;
+  }
+  .shop_register_main img{
+    margin-top: 30%;
+  }
+  .shop_register{
+    padding-top: 5%;
+  }
+  .shop_login{
+    padding-top: 5%;
+  }
+  .shop_login_main{
+    border:1px solid rgb(168, 173, 179) ;
+    border-radius: 8px;
+    padding:12% 2%;
+    margin: 5%;
+    background-image:url("https://img.freepik.com/free-photo/friendly-barman-with-arms-crossed_23-2147821341.jpg?w=740&t=st=1707465927~exp=1707466527~hmac=06998480f34914f0c04d1c1eca9c1a855937a53d0863b09c3bafcf405c04bb8f");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  }
+  .shop_login_form{
+    padding: 2%;
+    margin: 0 8%;
+  }
+  
+  

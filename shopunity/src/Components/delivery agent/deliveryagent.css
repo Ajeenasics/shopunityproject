@@ -1,0 +1,33 @@
+.delivery_login_main {
+  border: 1px solid rgb(168, 173, 179);
+  border-radius: 8px;
+  padding: 12% 2%;
+  margin: 5%;
+  background-image: url("https://img.freepik.com/free-photo/cheerful-woman-receiving-parcel-from-courier-smiling-happy-deliveryman-with-yellow-thermal-backpack-wearing-red-uniform-talking-with-female-customer-home-delivery-service-post-concept_74855-11612.jpg?w=740&t=st=1707465559~exp=1707466159~hmac=c578e6a65b0961a0ea0c1d2642b72423fbedc15378f6b34c468e0cce460c7c91");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.delivery_login_form {
+  padding: 2%;
+  margin: 0 8%;
+}
+
+.delivery_login {
+  padding-top: 5%;
+}
+.delivery_agent_register {
+  padding-top: 5%;
+}
+.delivery_agent_register_main {
+  border: 1px solid rgb(168, 173, 179);
+  border-radius: 8px;
+  padding: 5%;
+  margin: 5%;
+  background-image: url("https://img.freepik.com/free-photo/happy-courier-holding-clipboard-woman-signing-positive-deliveryman-red-cap-shirt-carrying-thermo-bag-delivering-express-order-female-customer-delivery-service-post-concept_74855-11766.jpg?w=740&t=st=1707465589~exp=1707466189~hmac=3d56bdaf1d3a9a2781eeb433878e39dc68b09a5ea9585194d3017d99fbec3176");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.delivery_agent_register_form {
+  padding: 2%;
+  margin: 0 8%;
+}
