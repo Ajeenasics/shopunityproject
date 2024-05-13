@@ -14,7 +14,7 @@ function DeliveryAgentRegistration() {
   };
   return (
     <div className="delivery_agent_register">
-      <h5 className="text-center mt-5">Delivery Agent Register</h5>
+      <h5 className="text-center mt-5 text-light">Delivery Agent Register</h5>
       <Container>
         <Row className="delivery_agent_register_main">
           <Col className=" delivery_agent_register_form">
@@ -91,7 +91,7 @@ function DeliveryAgentRegistration() {
               <Form.Control type="text" placeholder="name@example.com" />
             </FloatingLabel>
 
-            <button onClick={handleRegister} className="btn btn-dark mt-5">
+            <button onClick={handleRegister} className="btn btn-primary mt-5">
               {" "}
               Register
             </button>

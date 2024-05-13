@@ -13,7 +13,7 @@ function ShopOwnerRegistration() {
   };
   return (
     <div className="shop_register">
-      <h5 className="text-center mt-5"> Shop Owner Register</h5>
+      <h5 className="text-center mt-5 text-light"> Shop Owner Register</h5>
       <Container>
         <Row className="shop_register_main">
           
@@ -64,7 +64,7 @@ function ShopOwnerRegistration() {
             >
               <Form.Control type="email" placeholder="name@example.com" />
             </FloatingLabel>
-            <button onClick={registerHandled} className="btn btn-dark mt-5">
+            <button onClick={registerHandled} className="btn btn-primary mt-1">
               {" "}
               Register
             </button>
