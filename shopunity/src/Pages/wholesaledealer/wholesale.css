@@ -1,11 +1,6 @@
 .wholesale_dealer_register_main {
-  border: 1px solid rgb(168, 173, 179);
-  border-radius: 8px;
   padding: 2%;
-  margin: 5%;
-  background-image: url("https://img.freepik.com/free-photo/smart-indian-engineer-man-wearing-safety-helmet-doing-stock-tick-check-cardboard-stock-product-management-factory-warehouse-background_609648-1377.jpg?w=740&t=st=1707464935~exp=1707465535~hmac=cd8348b1844af25a3cdc739895a74f2ed532a3faecfd64f96a2eea15d91e0994");
-  background-repeat: no-repeat;
-  background-size: cover;
+ 
   
 }
 .wholesale_dealer_register_form {
@@ -15,18 +10,21 @@
 
 .Wholesale_dealer_register {
   padding-top: 2%;
+  background-image: url("../../images/wholesale\ dealer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .wholesale_dealer_login {
+  background-image:url("../../images/wholesale\ dealer2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
   padding-top: 5%;
 }
 .wholesale_dealer_login_main {
-  border: 1px solid rgb(168, 173, 179);
-  border-radius: 8px;
+  
   padding:  2%;
   margin: 5%;
-  background-image:url("https://img.freepik.com/free-photo/smart-indian-engineer-man-wearing-safety-helmet-doing-stock-tick-check-cardboard-stock-product-management-factory-warehouse-background_609648-1401.jpg?w=740&t=st=1707465882~exp=1707466482~hmac=5edf5a60ff63846815abd49846c9a071c990b74e8ba52357e3cf53115ba627d8");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .wholesale_dealer_login_form {
   padding: 8%;

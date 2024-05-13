@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function WholesaleDealerLogin() {
   return (
     <div className="wholesale_dealer_login ">
-    <h5 className='text-center mt-5'>Wholesale dealer Login</h5>
+    <h5 className='text-center mt-5 text-light'>Wholesale dealer Login</h5>
       <Container>
         <Row className="wholesale_dealer_login_main">
           <Col>
@@ -29,10 +29,10 @@ function WholesaleDealerLogin() {
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
             <Link to="" className="forgotpassword" style={{float:"right"}} >forgot password</Link>
-            <Link to="/wholesaledealerhome" className="btn btn-dark mt-5"> Login</Link>
+            <Link to="/wholesaledealerhome" className="btn btn-primary mt-3 "> Login</Link>
 
           </Col>
-          <label className='text-center'>not a member? <Link to={'/wholesaledealerregistration'}>Sign up now</Link></label>
+          <label className='text-center text-light'>not a member? <Link to={'/wholesaledealerregistration'}>Sign up now</Link></label>
 
         </Row>
       </Container>

@@ -18,11 +18,11 @@ function CustomerLogin() {
        
       </Col>
 
-      <Col className=" customer_login_form">
+      <Col className=" customer_login_form bg-transparent">
         <FloatingLabel
           controlId="floatingInput"
           label="Email address"
-          className="mb-3"
+          className="mb-3 bg-transparent"
         >
           <Form.Control type="email" placeholder="name@example.com" />
         </FloatingLabel>
@@ -31,7 +31,7 @@ function CustomerLogin() {
         </FloatingLabel>
         <Link to="#" className="forgotpassword" style={{float:"right"}} >forgot password</Link>
 
-        <Link to="/customerhome" className="btn btn-dark mt-5"> Login</Link>
+        <Link to="/customerhome" className="btn btn-primary mt-3"> Login</Link>
 
       </Col>
       <label className='text-center'>not a member? <Link to={'/customerregistration'}>Sign up now</Link></label>

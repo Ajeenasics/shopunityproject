@@ -16,6 +16,7 @@ import CustomerHomePage from './Pages/customer/CustomerHomePage'
 import Navigation from './Pages/Navigation'
 import Footer from './Pages/Footer'
 import LandingPage from './Pages/Admin/LandingPage';
+import AdminDashboard from './Components/AdminDashboard';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
 {/* Admin */}
 
     <Route path='/Admin' element={[<Navigation/>,<AdminLogin/>,<Footer/>]} />
+    <Route path='admin_dashboard' element={<AdminDashboard/>}/>
 
     </Routes>
      

@@ -36,7 +36,6 @@ function WholesaleDealerRegistration() {
   };
   const navigate = useNavigate();
 
-
   const registerHandled = (e) => {
     e.preventDefault();
 
@@ -68,21 +67,17 @@ function WholesaleDealerRegistration() {
 
     // setErrors(errors);
 
-
-
-
     // if (
     //   wholesaleDealerRegister.companyname &&
     //   wholesaleDealerRegister.lisenceno &&
     //   wholesaleDealerRegister.email &&
     //   wholesaleDealerRegister.password &&
-    //   wholesaleDealerRegister.address 
+    //   wholesaleDealerRegister.address
     // ) {
     //   formValid = true;
     // }
     // if (formValid) {
     //   // sendDataToServer();
-
 
     //   e.preventDefault();
     //   //Soumya
@@ -118,8 +113,6 @@ function WholesaleDealerRegistration() {
     // }
 
     // console.log(wholesaleDealerRegister);
-
-
   };
   //  if (!validator.isByteLength(wholesaleDealerRegister.lisenceno, {
   //       min: 6,
@@ -131,14 +124,16 @@ function WholesaleDealerRegistration() {
   //     } else {
   // navigate("/wholesaledealerlogin");
   // };
-  ;
   console.log(wholesaleDealerRegister);
 
   return (
     <div className="Wholesale_dealer_register p-5">
-      <h5 className="text-center mt-5">Wholesale dealer register</h5>
+      <h5 className="text-center mt-5 text-light pt-4">
+        Wholesale dealer register
+      </h5>
       <Container>
         <Row className="wholesale_dealer_register_main">
+          <Col></Col>
           <Col className=" wholesale_dealer_register_form">
             <FloatingLabel
               controlId="floatingInput"
@@ -205,13 +200,10 @@ function WholesaleDealerRegistration() {
                 required
               />
             </FloatingLabel>
-            <button onClick={registerHandled} className="btn btn-dark mt-2">
+            <button onClick={registerHandled} className="btn btn-primary mt-2">
               {" "}
               Register
             </button>
-          </Col>
-          <Col>
-
           </Col>
         </Row>
       </Container>
