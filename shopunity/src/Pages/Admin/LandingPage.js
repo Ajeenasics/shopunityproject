@@ -122,7 +122,7 @@ function LandingPage() {
             ></img>
           </Col>
           <Col>
-            <h5 className="mt-5">About As</h5>
+            <h5 className="mt-5 pt-5">About As</h5>
             <div>
               Welcome to Shop Unity, your one-stop destination for all your
               wholesale needs! At Shop Unity, we believe in fostering unity
@@ -149,8 +149,9 @@ function LandingPage() {
           </Col>
         </Row>
       </div>
-      <div id="contact" className="container mt-5 pt-5">
-        <h5 className="text-center mt-5 ">contact</h5>
+      <hr></hr>
+      <div id="contact" className="container mt-5 pt-5 ">
+        <h5 className="text-center mt-5 pt-5 ">contact</h5>
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Name</Form.Label>
@@ -172,6 +173,7 @@ function LandingPage() {
           <button className="btn btn-primary">Get in touch</button>
         </Form>
       </div>
+      <hr></hr>
     </div>
   );
 }
