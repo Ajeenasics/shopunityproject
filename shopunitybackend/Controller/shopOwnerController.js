@@ -1,6 +1,21 @@
 const shopownerschema = require("../Model/ShopOwnerSchema");
 
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: function (req, res, cb) {
+    cb(null, "./upload");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage }).single("file");
+
 const shopeOwnerRegister = (req, res) => {
+  console.log(req.body);
+  console.log(req.file);
   const shopowner = new shopownerschema({
     shopname: req.body.shopname,
     shopownername: req.body.shopownername,
@@ -140,6 +155,7 @@ const DeleteAShopOwner = (req, res) => {
 };
 
 module.exports = {
+  upload,
   shopeOwnerRegister,
   ShopeOwnerLogin,
   getAllShopOwners,
