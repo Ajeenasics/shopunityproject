@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Form from "react-bootstrap/Form";
 import "./shopowner.css";
 import { useNavigate, Link } from "react-router-dom";
 import axiosInstance from "../../APIS/axiosinstatnce";
@@ -31,24 +28,24 @@ function ShopOwnerRegistration() {
     shoplisence: "",
     shopownerpassword: "",
   });
-  let formValid = true;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
-    console.log(data);
   };
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
     setData({ ...data, [name]: files[0] });
-    console.log(files[0]);
+    console.log(files);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let errors = {};
+
+    let formValid = true;
 
     if (!data.shopname.trim()) {
       formValid = false;
@@ -101,6 +98,8 @@ function ShopOwnerRegistration() {
     }
 
     setErrors(errors);
+
+    // console.log(data.shoplisence);
     if (
       data.shopname &&
       data.shopownername &&
@@ -108,17 +107,45 @@ function ShopOwnerRegistration() {
       data.shopownercontact &&
       data.shopowneraddress &&
       data.shopregistrationnumber &&
-      data.shopownerpassword && data.shoplisence &&
-      formValid
+      data.shopownerpassword &&
+      data.shoplisence
     ) {
-      axiosInstance.post("/shopeowner_register", data).then((result) => {
-        console.log(data);
-        console.log(result);
-      });
+      formValid = true;
+    }
+
+    if (Object.keys(errors).length === 0 && formValid) {
+      const formData = new FormData();
+
+      console.log(data.shoplisence,data.shopname);
+      formData.append("shopname", data.shopname);
+      formData.append("shopownername", data.shopownername);
+      formData.append("shopowneremail", data.shopowneremail);
+      formData.append("shopownercontact", data.shopownercontact);
+      formData.append("shopowneraddress", data.shopowneraddress);
+      formData.append("shopregistrationnumber", data.shopregistrationnumber);
+      formData.append("shopownerpassword", data.shopownerpassword);
+      formData.append("file", data.shoplisence);
+      try {
+        console.log(formData, "formdata");
+        const response = await axiosInstance.post(
+          "/shopeowner_register",
+          formData,
+        );
+        console.log("Response:", response);
+        alert("Waiting for Admin approval..");
+        setTimeout(() => {
+          navigate("/admin");
+        }, 1500);
+      } catch (error) {
+        console.error("Error:", error);
+        let msg = error?.response?.data?.message || "Error occurred";
+        alert(msg);
+      }
     } else {
+      // console.log("Form is not valid", formValid);
+      // console.log("Data entered", data);
     }
   };
-
   return (
     <div className="shop_register">
       <h5 className="text-center mt-5 text-light"> Shop Owner Register</h5>
@@ -278,7 +305,7 @@ function ShopOwnerRegistration() {
                 type="file"
                 name="shoplisence"
                 onChange={handleFileChange}
-                required
+                // required
               />
               {errors.shoplisence && (
                 <div className="form-control m-2 text-danger errortext">
