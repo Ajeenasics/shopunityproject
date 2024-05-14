@@ -17,6 +17,8 @@ import Navigation from './Pages/Navigation'
 import Footer from './Pages/Footer'
 import LandingPage from './Pages/Admin/LandingPage';
 import AdminDashboard from './Components/AdminDashboard';
+import ShopHomePage from './Components/ShopOwner/ShopHomePage';
+import ShopOwnerNav from './Pages/Navs/ShopOwnerNav';
 
 
 function App() {
@@ -47,7 +49,7 @@ function App() {
 
     <Route path='/shopownerregistration' element={[<Navigation/>,<ShopOwnerRegistration/>,<Footer/>]} />
     <Route path='/shopownerlogin' element={[<Navigation/>,<ShopOwnerLogin/>,<Footer/>]} />
-    <Route path='/shopownerhome' element={[<Navigation/>,<ShopownerHomepage/>,<Footer/>]} />
+    <Route path='/shopownerhome' element={[<ShopOwnerNav/>,<ShopHomePage/>,<Footer/>]} />
 
 {/* Admin */}
 
