@@ -49,6 +49,7 @@ const deliveryagentschema = mongoose.Schema({
     type: String,
     required: true,
   },
+  
 });
 
 module.exports = mongoose.model("deliveryagents", deliveryagentschema);

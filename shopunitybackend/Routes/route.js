@@ -35,7 +35,7 @@ Route.post('/delete_a_deliveryagent/:deliveryagentid',DeliveryAgentController.De
 
 
 // shop ownerS
-Route.post("/shopeowner_register",ShopeOwnerController.shopeOwnerRegister,ShopeOwnerController.upload)
+Route.post("/shopeowner_register",ShopeOwnerController.upload,ShopeOwnerController.shopeOwnerRegister)
 Route.post('/shopowner_login',ShopeOwnerController.ShopeOwnerLogin)
 Route.get('/get_all_shopowners',ShopeOwnerController.getAllShopOwners)
 Route.get('/get_a_shopowner/:shopownerid',ShopeOwnerController.getAshopowner)
