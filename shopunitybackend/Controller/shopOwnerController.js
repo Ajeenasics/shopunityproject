@@ -1,5 +1,5 @@
 const shopownerschema = require("../Model/ShopOwnerSchema");
-const jwt=require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
 const multer = require("multer");
 
 const storage = multer.diskStorage({
@@ -22,8 +22,8 @@ const shopeOwnerRegister = (req, res) => {
     shopownercontact: req.body.shopownercontact,
     shopowneremail: req.body.shopowneremail,
     shopowneraddress: req.body.shopowneraddress,
-    shopregistrationnumber:req.body.shopregistrationnumber,
-    shoplisence:req.file.originalname,
+    shopregistrationnumber: req.body.shopregistrationnumber,
+    shoplisence: req.file.originalname,
     shopownerpassword: req.body.shopownerpassword,
   });
   shopowner
@@ -44,7 +44,7 @@ const shopeOwnerRegister = (req, res) => {
 
 const ShopeOwnerLogin = async (req, res) => {
   try {
-    const { email,password } = req.body;
+    const { email, password } = req.body;
     // console.log(req.body);
     const shopowner = await shopownerschema.findOne({
       shopowneremail: email,
@@ -74,7 +74,7 @@ const ShopeOwnerLogin = async (req, res) => {
     res
       .status(500)
       .json({ error: error, message: "shop owner does not exist" });
-      console.log(error);
+    console.log(error);
   }
 };
 
@@ -94,6 +94,7 @@ const getAllShopOwners = (req, res) => {
 };
 
 const getAshopowner = (req, res) => {
+  console.log(req.params);
   const shopownerid = req.params.shopownerid;
   shopownerschema
     .findById(shopownerid)
@@ -156,6 +157,36 @@ const DeleteAShopOwner = (req, res) => {
     });
 };
 
+const Shopownerforgot = async (req, res) => {
+  console.log(req.body);
+  try {
+    const Shopownerforgotpswrd = await shopownerschema.findOneAndUpdate(
+      { shopowneremail: req.body.email },
+      { shopownerpassword: req.body.password },
+      { new: true }
+    );
+    console.log(Shopownerforgotpswrd);
+    if (Shopownerforgotpswrd) {
+      return res.json({
+        status: 200,
+        msg: "Password updated successfully",
+      });
+    } else {
+      return res.status(404).json({
+        status: 404,
+        msg: "Shop owner not found",
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      status: 500,
+      msg: "Failed to update password",
+      error: err.message,
+    });
+  }
+};
+
 module.exports = {
   upload,
   shopeOwnerRegister,
@@ -164,4 +195,5 @@ module.exports = {
   EditAShopOwner,
   getAshopowner,
   DeleteAShopOwner,
+  Shopownerforgot,
 };
