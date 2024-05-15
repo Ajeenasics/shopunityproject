@@ -1,5 +1,5 @@
 const shopownerschema = require("../Model/ShopOwnerSchema");
-
+const jwt=require("jsonwebtoken")
 const multer = require("multer");
 
 const storage = multer.diskStorage({
@@ -23,7 +23,7 @@ const shopeOwnerRegister = (req, res) => {
     shopowneremail: req.body.shopowneremail,
     shopowneraddress: req.body.shopowneraddress,
     shopregistrationnumber:req.body.shopregistrationnumber,
-    shoplisence:req.body.shoplisence,
+    shoplisence:req.file.originalname,
     shopownerpassword: req.body.shopownerpassword,
   });
   shopowner
@@ -44,25 +44,26 @@ const shopeOwnerRegister = (req, res) => {
 
 const ShopeOwnerLogin = async (req, res) => {
   try {
-    const { shopowneremail, shopownerpassword } = req.body;
-    console.log(req.body);
+    const { email,password } = req.body;
+    // console.log(req.body);
     const shopowner = await shopownerschema.findOne({
-      shopowneremail: shopowneremail,
+      shopowneremail: email,
     });
-    console.log(shopowner.shopownerpassword);
+    // console.log(shopowner.shopownerpassword,"pp");
+    // console.log(password,"ppp");
     if (shopowner) {
-      if (shopowner.shopownerpassword == shopownerpassword) {
+      if (shopowner.shopownerpassword == password) {
         const token = jwt.sign(
           {
-            shopowneremail: shopowner.shopowneremail,
-            shopownerpassword: shopowner.shopownerpassword,
+            email: shopowner.shopowneremail,
+            password: shopowner.shopownerpassword,
           },
           "secret_key",
           { expiresIn: 86400 }
         );
         return res
           .status(200)
-          .json({ message: "Login successful", token, id: customer._id });
+          .json({ message: "Login successful", token, id: shopowner._id });
       } else {
         return res.status(401).json({ message: "Password is incorrect" });
       }
@@ -73,6 +74,7 @@ const ShopeOwnerLogin = async (req, res) => {
     res
       .status(500)
       .json({ error: error, message: "shop owner does not exist" });
+      console.log(error);
   }
 };
 

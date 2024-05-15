@@ -20,7 +20,7 @@ function AdminHome() {
       setWholesale(responce.data);
     });
     axiosInstance.get("/orderListing").then((responce) => {
-      setOrders(Deliveryagent.data);
+      setDeliveryagent(Deliveryagent.data);
     });
   }, []);
 
@@ -52,7 +52,7 @@ function AdminHome() {
               <Link>
                 <div className="order__box">
                   <h5>Total Shop Owners</h5>
-                  <span>{ShopOwners.length}</span>
+                  <span>{shopOwners.length}</span>
                 </div>
               </Link>
             </div>

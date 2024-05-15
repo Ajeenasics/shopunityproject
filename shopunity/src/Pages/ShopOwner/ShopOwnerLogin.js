@@ -57,7 +57,10 @@ function ShopOwnerLogin() {
       axiosInstance
         .post("/shopowner_login", data)
         .then((result) => {
-          console.log(result);
+          alert(result.data.message);
+          localStorage.setItem("shopowner",result.data.id)
+          localStorage.setItem("shopownertoken",result.data.token)
+          Navigate("/shopownerhome")
         })
         .catch((err) => {
           alert(err.response.data.message);

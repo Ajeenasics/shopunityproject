@@ -116,7 +116,7 @@ function ShopOwnerRegistration() {
     if (Object.keys(errors).length === 0 && formValid) {
       const formData = new FormData();
 
-      console.log(data.shoplisence,data.shopname);
+      console.log(data.shoplisence, data.shopname);
       formData.append("shopname", data.shopname);
       formData.append("shopownername", data.shopownername);
       formData.append("shopowneremail", data.shopowneremail);
@@ -127,14 +127,15 @@ function ShopOwnerRegistration() {
       formData.append("file", data.shoplisence);
       try {
         console.log(formData, "formdata");
-        const response = await axiosInstance.post(
-          "/shopeowner_register",
-          formData,
-        );
+        var response;
+        if (formData) {
+          response = await axiosInstance.post("/shopeowner_register", formData);
+        }
+
         console.log("Response:", response);
         alert("Waiting for Admin approval..");
         setTimeout(() => {
-          navigate("/admin");
+          navigate("/shopownerlogin");
         }, 1500);
       } catch (error) {
         console.error("Error:", error);
