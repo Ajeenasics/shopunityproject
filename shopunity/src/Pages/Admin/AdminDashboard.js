@@ -11,16 +11,17 @@ function AdminHome() {
 
   useEffect(() => {
     axiosInstance.get("/get_all_customers").then((responce) => {
-      setCustomers(responce.data);
+      setCustomers(responce.data.data);
     });
-    axiosInstance.get("/sellerListing").then((responce) => {
-      setShopOwners(responce.data);
+    axiosInstance.get("/get_all_shopowners").then((responce) => {
+      setShopOwners(responce.data.data);
     });
-    axiosInstance.get("/propertyListing").then((responce) => {
-      setWholesale(responce.data);
+    axiosInstance.get("/get_all_wholesaledealer").then((responce) => {
+      console.log(responce.data.data);
+      setWholesale(responce.data.data);
     });
-    axiosInstance.get("/orderListing").then((responce) => {
-      setDeliveryagent(Deliveryagent.data);
+    axiosInstance.get("/get_all_deliveryagents").then((responce) => {
+      setDeliveryagent(responce.data.data);
     });
   }, []);
 
