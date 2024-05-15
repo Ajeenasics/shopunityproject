@@ -16,9 +16,14 @@ import CustomerHomePage from './Pages/customer/CustomerHomePage'
 import Navigation from './Pages/Navigation'
 import Footer from './Pages/Footer'
 import LandingPage from './Pages/Admin/LandingPage';
-import AdminDashboard from './Components/AdminDashboard';
+import AdminDashboard from './Components/Admin/AdminDashboard';
 import ShopHomePage from './Components/ShopOwner/ShopHomePage';
 import ShopOwnerNav from './Pages/Navs/ShopOwnerNav';
+import Shopownerforgotpswrd from './Components/ShopOwner/Shopownerforgotpswrd';
+import ShopownerProfile from './Components/ShopOwner/ShopownerProfile';
+import ShopOwnerProfileEdit from './Components/ShopOwner/ShopOwnerProfileEdit';
+import ShopOwnerPendingList from './Components/Admin/ShopOwnerPendingList';
+import ShopOwnerList from './Components/Admin/ShopOwnerList';
 
 
 function App() {
@@ -50,12 +55,15 @@ function App() {
     <Route path='/shopownerregistration' element={[<Navigation/>,<ShopOwnerRegistration/>,<Footer/>]} />
     <Route path='/shopownerlogin' element={[<Navigation/>,<ShopOwnerLogin/>,<Footer/>]} />
     <Route path='/shopownerhome' element={[<ShopOwnerNav/>,<ShopHomePage/>,<Footer/>]} />
-
+    <Route path='/shopownerforgotpaswd' element={<Shopownerforgotpswrd/>}/>
+    <Route path='/shopownerprofile' element={<ShopownerProfile/>}/>
+    <Route path='/shopownerprofileedit' element={<ShopOwnerProfileEdit/>}/>
 {/* Admin */}
 
     <Route path='/Admin' element={[<Navigation/>,<AdminLogin/>,<Footer/>]} />
-    <Route path='admin_dashboard' element={<AdminDashboard/>}/>
-
+    <Route path='/admin_dashboard' element={<AdminDashboard/>}/>
+    <Route path='/shopownerspendinglist' element={<ShopOwnerPendingList/>}></Route>
+    <Route path='/shopownerslist' element={<ShopOwnerList/>}></Route>
     </Routes>
      
     </BrowserRouter>

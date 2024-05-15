@@ -19,19 +19,19 @@ function Sidebar() {
 
               <Link to="/rp_list">List</Link>
 
-              <Link to="/rp_pendinglist">Shop Owners pending List</Link>
+              <Link to="/shopownerslist">Shop Owners List</Link>
 
-              <Link to="/counsiler_list">Customers List</Link>
+              <Link to="/shopownerspendinglist">Shop Owners pending List</Link>
 
-              <Link to="/counsiler_accepted">wholesale dealers List</Link>
+              <Link to="/wholesaledealerslist">wholesale dealers List</Link>
 
-              <Link to="/parent_list">Parents List</Link>
+              <Link to="/wholesaledealerspendinglist">Wholesale Dealers Pending List</Link>
             </li>
             <li>
-              <Link to="/tutorials_list">Tutorials</Link>
+              <Link to="/tutorials_list">Customers List</Link>
             </li>
             <li>
-              <Link to="/blog_list">Blogs</Link>
+              <Link to="/blog_list">Delivery Agent</Link>
               <Link>
                 <div onClick={handleLogout}>Logout</div>
               </Link>

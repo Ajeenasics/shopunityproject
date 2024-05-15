@@ -79,9 +79,9 @@ function ShopOwnerRegistration() {
     if (!data.shopregistrationnumber.trim()) {
       formValid = false;
       errors.shopregistrationnumber =
-        "shopregistrationnumber number is required";
-    } else if (data.shopregistrationnumber.length < 10) {
-      errors.shopregistrationnumber = "Enter a valid 10-digit contact number";
+        "Shop registration number number is required";
+    } else if (data.shopregistrationnumber.length <= 3) {
+      errors.shopregistrationnumber = "Enter a valid Registartion number";
     }
 
     if (!data.shopownerpassword.trim()) {
@@ -262,7 +262,7 @@ function ShopOwnerRegistration() {
                 <label className="text-light">Shop Registration Number</label>
               </div>
               <input
-                type="number"
+                type="text"
                 placeholder="shopregistrationnumber"
                 name="shopregistrationnumber"
                 className="form-control m-2"

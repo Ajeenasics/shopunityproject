@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "../Pages/Admin/Sidebar";
-import AdminHome from "../Pages/Admin/AdminDashboard";
+import Sidebar from "../../Pages/Admin/Sidebar";
+import AdminHome from "../../Pages/Admin/AdminDashboard";
 
 function AdminDashboard() {
   return (
