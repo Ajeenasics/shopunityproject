@@ -9,6 +9,8 @@ const jwt=require("jsonwebtoken")
 app.use(cors())
 app.use(bodyparser.json())
 
+app.use(express.static(`${__dirname}/upload`));
+
 const route=require('./Routes/route')
 app.use('/',route)
 
