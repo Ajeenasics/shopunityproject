@@ -53,7 +53,9 @@
 
 }
 .shopownerprofile{
-  background-color: rgb(150, 150, 150);
+  background: linear-gradient(to right, #3f3e3e, #cabeb8);
+
+  /* background-color: rgb(150, 150, 150); */
   color:white;
   padding:5% 15%
 }
@@ -61,4 +63,43 @@
   background-color: rgba(255, 228, 196, 0);
   border: none;
 } */
+ 
+.shopownerprofilepage {
+  width: 100%;
 
+  border:1px solid black;
+}
+
+.user-card-full {
+  overflow: hidden;
+}
+
+.shopownerprofilepagediv {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+  border: none;
+  margin-bottom: 30px;
+}
+
+
+.user-card-full .user-profile {
+  border-radius: 5px 0 0 5px;
+}
+
+.bg-c-lite-green {
+  /* background: linear-gradient(to right, #3f3e3e, #c06636); */
+  height: fit;
+}
+
+
+
+
+
+.user-card-full .social-link li {
+  display: inline-block;
+}
+
+
+
+ 
