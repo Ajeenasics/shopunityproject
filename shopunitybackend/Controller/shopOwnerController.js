@@ -116,25 +116,34 @@ const getAshopowner = (req, res) => {
 
 const EditAShopOwner = (req, res) => {
   const shopownerid = req.params.shopownerid;
+
+  const updateData = {
+    shopname: req.body.shopname,
+    shopownername: req.body.shopownername,
+    shopownercontact: req.body.shopownercontact,
+    shopowneremail: req.body.shopowneremail,
+    shopowneraddress: req.body.shopowneraddress,
+  };
+
   shopownerschema
-    .findByIdAndUpdate(shopownerid, {
-      shopname: req.body.shopname,
-      shopownername: req.body.shopownername,
-      shopownercontact: req.body.shopownercontact,
-      shopowneremail: req.body.shopowneremail,
-      shopowneraddress: req.body.shopowneraddress,
-      shopownerpassword: req.body.shopownerpassword,
-    })
+    .findByIdAndUpdate(shopownerid, updateData, { new: true })
     .then((result) => {
-      res.json({
+      if (!result) {
+        return res.status(404).json({
+          status: 404,
+          message: "Shop owner not found",
+        });
+      }
+      res.status(200).json({
         status: 200,
         data: result,
       });
     })
     .catch((err) => {
-      res.json({
+      console.error(err);
+      res.status(500).json({
         status: 500,
-        message: "Failed to Update",
+        message: "Failed to update",
       });
     });
 };
@@ -187,6 +196,53 @@ const Shopownerforgot = async (req, res) => {
   }
 };
 
+const acceptShopOwner = async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!id) {
+      return res.status(400).json({ message: "Id is required" });
+    }
+
+    const shopowner = await shopownerschema.findById(id);
+    if (!shopowner) {
+      return res.status(404).json({ message: "shopowner not found" });
+    }
+
+    shopowner.status = "accepted";
+    await shopowner.save();
+    return res
+      .status(200)
+      .json({ message: "shopowner registration accepted", data: shopowner });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: "server error on accept shopowner", error });
+  }
+};
+
+const rejectshopowner = async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!id) {
+      return res.status(400).json({ message: "Id is required" });
+    }
+    const shopowner = await shopownerschema.findById(id);
+    if (!shopowner) {
+      return res.status(404).json({ message: "shopowner not found" });
+    }
+
+    shopowner.status = "rejected";
+    await shopowner.save();
+    return res
+      .status(200)
+      .json({ message: "shopowner registration rejected", data: shopowner });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: "server error on reject shopowner", error });
+  }
+};
+
 module.exports = {
   upload,
   shopeOwnerRegister,
@@ -196,4 +252,6 @@ module.exports = {
   getAshopowner,
   DeleteAShopOwner,
   Shopownerforgot,
+  acceptShopOwner,
+  rejectshopowner,
 };
