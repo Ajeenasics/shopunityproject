@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../APIS/axiosinstatnce";
+import { Link } from "react-router-dom";
 
 function ShopOwnerprofileEditpage() {
   const [data, setData] = useState({
-
     shopname: "",
     shopownername: "",
     shopownercontact: "",
     shopowneremail: "",
     shopowneraddress: "",
     shopregistrationnumber: " ",
-});
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -104,7 +104,9 @@ function ShopOwnerprofileEditpage() {
                 {" "}
                 Edit{" "}
               </div>
-              <div className="btn btn-secondary mt-4"> Cancel </div>
+              <Link to="/shopownerprofile">
+                <div className="btn btn-secondary mt-4"> Cancel </div>
+              </Link>
             </div>
           </div>
         </div>
