@@ -7,14 +7,9 @@ function ShopOwnerPendingList() {
   return (
     <div>
       <AdminMainNav />
-      <div className="row">
-        <div className="col-2">
-          <Sidebar />
-        </div>
-        <div className="col-10">
-          < ShopOwnerPendingListPage/>
-        </div>
-      </div>
+
+      <ShopOwnerPendingListPage />
+
       <Footer />
     </div>
   );

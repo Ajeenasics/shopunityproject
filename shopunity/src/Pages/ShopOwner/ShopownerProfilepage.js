@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../APIS/axiosinstatnce";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function ShopownerProfilepage({ url }) {
   console.log(url.url.url);
+
   const [data, setData] = useState({});
+
   const shopownerid = localStorage.getItem("shopowner");
-  console.log(shopownerid);
+
   useEffect(() => {
     axiosInstance
       .get("/get_a_shopowner/" + shopownerid)
@@ -17,8 +19,13 @@ function ShopownerProfilepage({ url }) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [data]);
 
+  const Navigate=useNavigate()
+  const gotoEdit=(e)=>{
+    e.preventDefault()
+    Navigate("/shopownerprofileedit")
+  }
   return (
     <div className="shopownerprofile pt-5 mt-5">
       <div>
@@ -43,7 +50,8 @@ function ShopownerProfilepage({ url }) {
                           ></img>
                         </div>
                         <div>
-                          <Link to="/shopownerprofileedit"><button className="btn btn-dark px-5">Edit</button></Link>
+                          <button className="btn btn-dark px-5 " onClick={gotoEdit}> Edit </button>
+                          
                         </div>
                         <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16" />
                       </div>

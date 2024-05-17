@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../APIS/axiosinstatnce";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function ShopOwnerprofileEditpage() {
+function ShopOwnerProfileEditPage() {
   const [data, setData] = useState({
     shopname: "",
     shopownername: "",
     shopownercontact: "",
     shopowneremail: "",
     shopowneraddress: "",
-    shopregistrationnumber: " ",
+    shopregistrationnumber: "",
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setData({ ...data, [name]: value });
-    // console.log(states);
-  };
-
+  const navigate = useNavigate();
   const shopownerid = localStorage.getItem("shopowner");
-  console.log(shopownerid);
+
   useEffect(() => {
     axiosInstance
       .get("/get_a_shopowner/" + shopownerid)
@@ -30,14 +25,20 @@ function ShopOwnerprofileEditpage() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [shopownerid]);
 
-  const handleEdit = () => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };
+
+  const handleEdit = (e) => {
+    e.preventDefault();
     axiosInstance
-      .post("/edit_a_shopowner/" + shopownerid)
+      .post("/edit_a_shopowner/" + shopownerid, data)
       .then((res) => {
-        setData(res);
         console.log(res);
+        navigate("/shopownerprofile");
       })
       .catch((err) => {
         console.log(err);
@@ -46,8 +47,7 @@ function ShopOwnerprofileEditpage() {
 
   return (
     <div className="pt-5">
-      {" "}
-      <div className="shopownerprofile pt-5 ">
+      <div className="shopownerprofile pt-5">
         <div className="pt-5">
           <div className="container border p-5 rounded">
             <div className="row">
@@ -55,57 +55,60 @@ function ShopOwnerprofileEditpage() {
                 <label className="mt-4">Shop Name: </label>
                 <input
                   className="shopownerprofilinput form-control text-light bg-transparent border-none"
-                  placeholder={data.shopname}
+                  placeholder="Enter Shop Name"
                   name="shopname"
+                  value={data.shopname}
                   onChange={handleInputChange}
                 ></input>
-                <label className="mt-4">shopowneremail: </label>
+                <label className="mt-4">Shop Owner Email: </label>
                 <input
                   className="shopownerprofilinput form-control text-light bg-transparent border-none"
-                  placeholder={data.shopowneremail}
+                  placeholder="Enter Shop Owner Email"
                   name="shopowneremail"
+                  value={data.shopowneremail}
                   onChange={handleInputChange}
                 ></input>
-
-                <label className="mt-4">shopregistrationnumber: </label>
+                <label className="mt-4">Shop Registration Number: </label>
                 <input
-                  className="shopownerprofilinput form-control text-light bg-transparent border-none "
-                  placeholder={data.shopregistrationnumber}
+                  className="shopownerprofilinput form-control text-light bg-transparent border-none"
+                  placeholder="Enter Shop Registration Number"
                   name="shopregistrationnumber"
+                  value={data.shopregistrationnumber}
                   onChange={handleInputChange}
                 ></input>
               </div>
               <div className="col">
-                {" "}
                 <label className="mt-4">Shop Owner Name: </label>
                 <input
                   className="shopownerprofilinput form-control bg-transparent border-none"
-                  placeholder={data.shopownername}
+                  placeholder="Enter Shop Owner Name"
                   name="shopownername"
+                  value={data.shopownername}
                   onChange={handleInputChange}
                   style={{ color: "white" }}
                 ></input>
-                <label className="mt-4">shopownercontact: </label>
+                <label className="mt-4">Shop Owner Contact: </label>
                 <input
                   className="shopownerprofilinput form-control text-light bg-transparent border-none"
-                  placeholder={data.shopownercontact}
+                  placeholder="Enter Shop Owner Contact"
                   name="shopownercontact"
+                  value={data.shopownercontact}
                   onChange={handleInputChange}
                 ></input>
-                <label className="mt-4">Shop owner address : </label>
+                <label className="mt-4">Shop Owner Address: </label>
                 <input
                   className="shopownerprofilinput form-control text-light bg-transparent border-none"
-                  placeholder={data.shopowneraddress}
+                  placeholder="Enter Shop Owner Address"
                   name="shopowneraddress"
+                  value={data.shopowneraddress}
                   onChange={handleInputChange}
                 ></input>
               </div>
               <div className="btn btn-light mt-4" onClick={handleEdit}>
-                {" "}
-                Edit{" "}
+                Edit
               </div>
               <Link to="/shopownerprofile">
-                <div className="btn btn-secondary mt-4"> Cancel </div>
+                <div className="btn btn-secondary mt-4">Cancel</div>
               </Link>
             </div>
           </div>
@@ -115,4 +118,4 @@ function ShopOwnerprofileEditpage() {
   );
 }
 
-export default ShopOwnerprofileEditpage;
+export default ShopOwnerProfileEditPage;
