@@ -9,8 +9,8 @@ import "./Footer"
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="" id="navfixed">
-    <div className="col-10">
+    <Navbar collapseOnSelect expand="md" className="" id="navfixed" >
+    <div className="col-9">
       <Navbar.Brand href="/" className="toggleimg">
         <img src={logo} className="w-25" alt="img"></img>
       </Navbar.Brand>
@@ -21,7 +21,7 @@ function Navigation() {
         
 
         <Nav className="navlist">
-          <div class="dropdown " style={{ marginRight: "10px" }}>
+          <div class="dropdown ms-5 me-3" >
             <button
               class="btn btn-outline-success dropdown-toggle rounded-4"
               type="button"
