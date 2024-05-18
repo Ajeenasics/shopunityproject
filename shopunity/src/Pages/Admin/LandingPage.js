@@ -18,7 +18,7 @@ function LandingPage() {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" className="" id="navfixed">
-        <div className="col-8">
+        <div className="col-7">
           <Navbar.Brand href="/" className="toggleimg">
             <img src={logoimg} className="w-25 m-2" alt="img"></img>
           </Navbar.Brand>
@@ -27,7 +27,7 @@ function LandingPage() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <a href="#home" className="navlink ms-3 me-3 text-dark text-decoration-none">
+              <a href="#home" className="navlink ms-5 me-3 text-dark text-decoration-none">
                 <h6>Home</h6>
               </a>
               <a href="#about " className="navlink text-dark text-decoration-none">
@@ -39,7 +39,7 @@ function LandingPage() {
             </Nav>
 
             <Nav className="navlist">
-              <div class="dropdown " style={{ marginRight: "10px" }}>
+              <div class="dropdown " style={{ marginRight: "20px" }}>
                 <button
                   class="btn btn-outline-success dropdown-toggle rounded-4"
                   type="button"

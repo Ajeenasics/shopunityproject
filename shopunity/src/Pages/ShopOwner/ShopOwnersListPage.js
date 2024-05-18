@@ -1,10 +1,9 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
-import axiosInstance from '../../APIS/axiosinstatnce';
-import Sidebar from '../Admin/Sidebar';
+import axiosInstance from "../../APIS/axiosinstatnce";
+import Sidebar from "../Admin/Sidebar";
 
-function ShopOwnersListPage() {
-
+function ShopOwnersListPage({url}) {
   const [ShopOwner, SetShopOwner] = useState([]);
 
   useEffect(() => {
@@ -29,10 +28,8 @@ function ShopOwnersListPage() {
       });
   }
 
-
-
   return (
-    <div>
+    <div className="shop-owner-pending-list-page">
       <div className="row">
         <div className="col-2">
           <Sidebar />
@@ -55,34 +52,26 @@ function ShopOwnersListPage() {
                   <tr>
                     <th>shopname</th>
                     <th>shopownername</th>
-                    <th>Name</th>
-                    <th>shopowneraddress</th>
-                    <th>Experience Year</th>
-                    <th>Age</th>
-                    <th>Phone Number</th>
+                    <th>shoplisence</th>
+                    <th>shopregistrationnumber</th>
+                    <th>shopownercontact</th>
                   </tr>
                 </thead>
                 <tbody>
                   {ShopOwner.map((ShopOwner, index) => {
                     return (
                       <tr key={index} className="mt-4">
-                        <td>{index + 1}</td>
+                        <td>{ShopOwner.shopname}</td>
+                        <td>{ShopOwner.shopownername}</td>
                         <td>
                           <img
                             className="parentimage"
-                            alt="img"
-                            src={
-                              ShopOwner.profilePicture
-                                ? BASE_URL + ShopOwner.profilePicture.originalname
-                                : img
-                            }
+                            alt="img" style={{width:"50px",height:"50px"}}
+                            src={`${url}${ShopOwner.shoplisence}`}
                           ></img>
                         </td>
-                        <td>{ShopOwner.name}</td>
-                        <td>{ShopOwner.email}</td>
-                        <td>{ShopOwner.shopowneraddress}</td>
-                        <td>{ShopOwner.age}</td>
-                        <td>{ShopOwner.contact}</td>
+                        <td>{ShopOwner.shopregistrationnumber}</td>
+                        <td>{ShopOwner.shopownercontact}</td>
                       </tr>
                     );
                   })}
@@ -93,7 +82,6 @@ function ShopOwnersListPage() {
         </div>
       </div>
     </div>
-
   );
 }
 

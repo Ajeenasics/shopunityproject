@@ -128,14 +128,7 @@ function AdminLogin() {
               Login
             </button>
           </div>
-          <div className="text">
-            <h6 className="text-light">
-              Don't have an account?{" "}
-              <Link to="/register" className="text-decoration-none">
-                Register
-              </Link>
-            </h6>
-          </div>
+         
         </form>
       </div>
       <div className="col-6"></div>

@@ -154,6 +154,7 @@
        width: auto;
     }
  }
- #page-content-wrapper {
-   
+ .page-content-wrapper {
+   overflow-x: hidden;
 }
+ 
