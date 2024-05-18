@@ -3,11 +3,11 @@ import ShopOwnerNav from '../../Pages/Navs/ShopOwnerNav'
 import ShopownerProfilepage from '../../Pages/ShopOwner/ShopownerProfilepage'
 import Footer from '../../Pages/Footer'
 
-function ShopownerProfile() {
+function ShopownerProfile({url}) {
   return (
     <div className=''>
     <ShopOwnerNav/>,
-    <ShopownerProfilepage/>,
+    <ShopownerProfilepage url={{url}}/>,
     <Footer/>
     </div>
   )

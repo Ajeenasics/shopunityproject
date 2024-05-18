@@ -42,6 +42,8 @@ Route.get('/get_a_shopowner/:shopownerid',ShopeOwnerController.getAshopowner)
 Route.post('/edit_a_shopowner/:shopownerid',ShopeOwnerController.EditAShopOwner)
 Route.post('/delete_a_shopowner/:shopownerid',ShopeOwnerController.DeleteAShopOwner)
 Route.post('/shopowner_forgot',ShopeOwnerController.Shopownerforgot)
+Route.post("/acceptshopowner/:id",ShopeOwnerController.acceptShopOwner)
+Route.post("/rejectshopowner/:id",ShopeOwnerController.rejectshopowner)
 
 
 

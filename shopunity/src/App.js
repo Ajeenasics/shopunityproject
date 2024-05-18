@@ -27,6 +27,7 @@ import ShopOwnerList from './Components/Admin/ShopOwnerList';
 
 
 function App() {
+  const url="http://localhost:8002/"
   return (
     <BrowserRouter>
     <Routes>
@@ -56,7 +57,7 @@ function App() {
     <Route path='/shopownerlogin' element={[<Navigation/>,<ShopOwnerLogin/>,<Footer/>]} />
     <Route path='/shopownerhome' element={[<ShopOwnerNav/>,<ShopHomePage/>,<Footer/>]} />
     <Route path='/shopownerforgotpaswd' element={<Shopownerforgotpswrd/>}/>
-    <Route path='/shopownerprofile' element={<ShopownerProfile/>}/>
+    <Route path='/shopownerprofile' element={<ShopownerProfile url={{url}}/>}/>
     <Route path='/shopownerprofileedit' element={<ShopOwnerProfileEdit/>}/>
 {/* Admin */}
 
